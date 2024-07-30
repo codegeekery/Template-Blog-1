@@ -43,8 +43,8 @@ const articles = [
     { id: 38, title: 'The Impact of Physical Activity on Mental Health', category: 'Fitness', excerpt: 'How regular physical activity can benefit mental health.', image: '/ejemplo6.jpg' },
     { id: 39, title: 'Understanding and Managing Chronic Fatigue', category: 'Mental Health', excerpt: 'What causes chronic fatigue and strategies for management.', image: '/ejemplo6.jpg' },
     { id: 40, title: 'The Role of Vitamin D in Immune Health', category: 'Nutrition', excerpt: 'How vitamin D supports immune function and overall health.', image: '/ejemplo6.jpg' },
-  ];
-  
+];
+
 
 const categories = ['All', 'Mental Health', 'Nutrition', 'Fitness', 'Sleep', 'Stress Management', 'Hydration', 'Wellness'];
 
