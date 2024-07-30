@@ -1,13 +1,13 @@
 'use client'
 import Image from "next/image"
-import Newsletter from "@/app/Components/Hero/Newsletter"
+import {Newsletter} from "@/app/Components/Layout/Newsletter"
 
 // ShadcnUI
 import {
     Button
 } from "@/components/ui/button"
 
-export default function LayoutBlog() {
+export function LayoutBlog() {
     return (
         <>
             <div className="container max-w-7xl mx-auto px-4 py-8">

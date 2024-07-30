@@ -1,5 +1,6 @@
-import LayoutBlog from "@/app/Components/Hero/LayoutBlog";
-import LayoutPostCad from "@/app/Components/Hero/LayoutPostCad";
+import {LayoutBlog} from "@/app/Components/Layout/LayoutBlog";
+import {LayoutPodcasts} from "@/app/Components/Layout/LayoutPodcasts";
+import {LayoutNewsCard} from "@/app/Components/News/NewsCards";
 
 export default function Home() {
   return (
@@ -8,7 +9,11 @@ export default function Home() {
       <LayoutBlog />
 
       {/* Layout Audio post cad */}
-      <LayoutPostCad />
+      <LayoutPodcasts />
+
+
+      {/* News Posts */}
+      <LayoutNewsCard />
 
     </>
   );
