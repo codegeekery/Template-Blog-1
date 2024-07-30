@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image"
 import Newsletter from "@/app/Components/Hero/Newsletter"
 
@@ -105,7 +106,7 @@ export default function LayoutBlog() {
                 </div>
                 {/* Button for More Articles */}
                 <div className='flex justify-center'>
-                    <Button className='p-4 w-[170px] mt-4'>
+                    <Button className='p-4 w-[170px] mt-4' onClick={()=> {window.location.href = "/Articles"}}>
                         More Articles
                     </Button>
                 </div>

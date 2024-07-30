@@ -7,6 +7,11 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Mindful - Health and Wellness",
   description: "Mindful is a health and wellness website that helps your mental and physical health.",
+  icons: {
+    icon: [
+      '/mindIcon.png',
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
