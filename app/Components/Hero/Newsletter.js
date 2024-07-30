@@ -7,7 +7,7 @@ export default function Newsletter() {
         <div className="bg-blue-100 p-6 md:p-8 rounded-md flex flex-col lg:flex-row items-center justify-between space-y-6 md:space-y-0 md:space-x-8 container max-w-7xl mx-auto mb-10">
             <div className="flex items-center space-x-4">
                 <Image
-                    src="/newsletter.webp" // Reemplaza con la ruta de tu imagen
+                    src="/newsLetter.webp" // Reemplaza con la ruta de tu imagen
                     alt="Newsletter"
                     width={100}
                     height={100}
