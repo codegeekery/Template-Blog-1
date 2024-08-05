@@ -16,21 +16,21 @@ const meditations = [
             'Una Meditación de 12 Minutos para Despertar el Flujo de Gratitud en la Naturaleza con Georgina Miranda',
         duration: '12:00',
         author: 'Georgina Miranda',
-        audioSrc: '/test.mp3' // Cambia esta ruta al archivo correcto
+        audioSrc: '' // Cambia esta ruta al archivo correcto
     },
     {
         title:
             'Una Meditación de 12 Minutos para Recordar que Nos Pertenecemos los Unos a los Otros',
         duration: '12:00',
         author: 'Ruth King',
-        audioSrc: '/test.mp3' // Cambia esta ruta al archivo correcto
+        audioSrc: '' // Cambia esta ruta al archivo correcto
     },
     {
         title:
             'Una Meditación de 12 Minutos para Descubrir el Potencial de Sanación',
         duration: '12:00',
         author: 'John Taylor',
-        audioSrc: '/test.mp3' // Cambia esta ruta al archivo correcto
+        audioSrc: '' // Cambia esta ruta al archivo correcto
     }
 ];
 
