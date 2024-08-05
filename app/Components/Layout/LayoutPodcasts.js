@@ -4,35 +4,36 @@ import React, { useState, useRef, useEffect } from 'react';
 
 const meditations = [
     {
-        title: 'A 12-Minute Meditation for Coming Home to Yourself',
+        title: 'Una Meditación de 12 Minutos para Volver a Ti Mismo',
         duration: '12:00',
         author: 'Georgina Miranda',
         description:
-            'While many of us lean on mindfulness to help us through times of inner and outer chaos, we can cultivate the greatest resilience through consistency in our practice, even when it doesn’t feel urgent.',
+            'Aunque muchos de nosotros recurrimos a la atención plena para ayudarnos en tiempos de caos interno y externo, podemos cultivar la mayor resiliencia a través de la consistencia en nuestra práctica, incluso cuando no se siente urgente.',
         audioSrc: '/test.mp3' // Cambia esta ruta al archivo correcto
     },
     {
         title:
-            'A 12-Minute Meditation to Awaken the Flow of Gratitude in Nature with Georgina Miranda',
+            'Una Meditación de 12 Minutos para Despertar el Flujo de Gratitud en la Naturaleza con Georgina Miranda',
         duration: '12:00',
         author: 'Georgina Miranda',
         audioSrc: '/test.mp3' // Cambia esta ruta al archivo correcto
     },
     {
         title:
-            'A 12-Minute Meditation for Remembering That We Belong to Each Other',
+            'Una Meditación de 12 Minutos para Recordar que Nos Pertenecemos los Unos a los Otros',
         duration: '12:00',
         author: 'Ruth King',
         audioSrc: '/test.mp3' // Cambia esta ruta al archivo correcto
     },
     {
         title:
-            'A 12-Minute Meditation to Uncover the Potential for Healing',
+            'Una Meditación de 12 Minutos para Descubrir el Potencial de Sanación',
         duration: '12:00',
         author: 'John Taylor',
         audioSrc: '/test.mp3' // Cambia esta ruta al archivo correcto
     }
 ];
+
 
 function MeditationCard({ meditation }) {
     const [isPlaying, setIsPlaying] = useState(false);
@@ -102,7 +103,7 @@ export function LayoutPodcasts() {
     return (
         <div className="container mx-auto p-4">
             <h1 className="text-3xl font-bold text-gray-900 mb-4">
-                Guided Meditations & Podcasts
+                Meditaciones Guiadas
             </h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 cursor-pointer">
                 {meditations.map((meditation, index) => (

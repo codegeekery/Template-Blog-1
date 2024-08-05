@@ -3,23 +3,23 @@ import Image from 'next/image';
 
 const newsItems = [
     {
-        title: "New Advances in Cancer Research Show Promising Results",
-        date: '3 hours ago',
-        imgSrc: '/ejemplo6.jpg', // Replace with actual image paths
+        title: "Nuevos Avances en la Investigación del Cáncer Muestran Resultados Prometedores",
+        date: 'Hace 3 horas',
+        imgSrc: '/ejemplo6.jpg', // Reemplazar con las rutas reales de las imágenes
     },
     {
-        title: 'How to Maintain Mental Health During Stressful Times',
-        date: 'Jul 30, 2024',
+        title: 'Cómo Mantener la Salud Mental en Tiempos Estresantes',
+        date: '30 de julio de 2024',
         imgSrc: '/ejemplo6.jpg',
     },
     {
-        title: 'The Benefits of a Plant-Based Diet for Heart Health',
-        date: 'Jul 29, 2024',
+        title: 'Los Beneficios de una Dieta Basada en Plantas para la Salud del Corazón',
+        date: '29 de julio de 2024',
         imgSrc: '/ejemplo6.jpg',
     },
     {
-        title: 'Top Exercises for Improving Your Immune System',
-        date: 'Jul 29, 2024',
+        title: 'Los Mejores Ejercicios para Mejorar tu Sistema Inmunológico',
+        date: '29 de julio de 2024',
         imgSrc: '/ejemplo6.jpg',
     },
 ];
@@ -28,7 +28,7 @@ const LayoutNewsCard = () => {
     return (
         <>
             <div className='container mx-auto'>
-                <h1 className='text-4xl font-medium mb-2 mt-4'>Healthy News</h1>
+                <h1 className='text-4xl font-medium mb-2 mt-4'>Noticias Saludables</h1>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-4">
                     {newsItems.map((item, index) => (
                         <div key={index} className="overflow-hidden">
