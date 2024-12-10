@@ -71,3 +71,27 @@
 }
 
 
+/* Estilo para la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 6px;  /* Ancho de la barra de desplazamiento */
+  height: 6px; /* Alto de la barra de desplazamiento horizontal */
+}
+
+/* Estilo para el fondo de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;  /* Fondo de la pista de la barra de desplazamiento */
+  border-radius: 10px;
+}
+
+/* Estilo para el control deslizante */
+::-webkit-scrollbar-thumb {
+  background-color: #474646; /* Color del control deslizante */
+  border-radius: 10px;
+}
+
+/* Estilo cuando el control deslizante está en hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color más oscuro cuando se pasa el ratón */
+}
+
+
