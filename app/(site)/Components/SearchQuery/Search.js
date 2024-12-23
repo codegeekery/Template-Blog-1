@@ -17,12 +17,11 @@ import { useRouter } from 'next/navigation';
 // lib
 import { cn } from '@/lib/utils';
 
-// Converting the Date time to  2 min ago, 2 month ago, 2 years ago
+// Converting the Date time to 2 min ago, 2 month ago, 2 years ago
 import { dateUtils } from '@/utils/dateUtils';
 
 // Sending Patch to field clicks in sanity
 import { updatePostClicks } from '@/utils/UpdateClicks';
-
 
 function useDebounce(value, delay) {
     const [debouncedValue, setDebouncedValue] = React.useState(value);
@@ -48,7 +47,7 @@ export function CommandSearch() {
     // Save Search Term
     const [search, setSearch] = React.useState('');
     
-    const useSearchDebounce = useDebounce(search, 700)
+    const useSearchDebounce = useDebounce(search, 700);
 
     // Retrieve the data after the coincidence term of search
     const { data, isLoading } = useSearchPosts(useSearchDebounce);
@@ -67,7 +66,7 @@ export function CommandSearch() {
         return () => document.removeEventListener('keydown', toggleSearch);
     }, []);
 
-    // After the user select the post that the found so this will excecute and let the user to /posts and also update in sanity the clicks field inc 1++
+    // After the user selects the post, this will execute and navigate to /posts while updating the clicks field in sanity
     const handleSelectPost = (slug, postId) => {
         setOpen(false);
         setSearch('');
@@ -93,39 +92,43 @@ export function CommandSearch() {
                 <CommandInput placeholder="Search posts..." value={search} onValueChange={setSearch} />
                 <CommandList>
                     {isLoading ? (
-                        <CommandEmpty className="flex justify-center">
-                            <Loader2 className="animate-spin" />
-                        </CommandEmpty>
+                        <CommandEmpty>Loading...</CommandEmpty>
+                    ) : !data?.length ? (
+                        <CommandEmpty>Not found post</CommandEmpty>
                     ) : (
-                        <>
-                            {search && (
-                                <CommandGroup>
-                                    {data?.map((post) => (
-                                        <CommandItem
-                                            key={post._id}
-                                            onSelect={() => handleSelectPost(post.slug.current, post._id)}
-                                            className="group relative flex items-center gap-4 p-4 cursor-pointer w-full"
-                                        >
-                                            <div className="w-24 h-24 flex-shrink-0 overflow-hidden rounded-md">
-                                                <img src={post.mainImage} alt={post.alt || 'Post Image'} className="w-full h-full object-cover" />
-                                            </div>
-                                            <div className="flex flex-col justify-between w-full">
-                                                <div className="font-bold text-lg text-primary break-words">{post.title}</div>
-                                                <div className="flex items-center gap-2 mt-2 text-sm text-muted-foreground">
-                                                    <img src={post.avatar} alt={`${post.authorName}'s Avatar`} className="w-6 h-6 rounded-full" />
-                                                    <span>By {post.authorName}</span>
-                                                    <span className="mx-2">•</span>
-                                                    <span>{dateUtils(post.publishedAt)}</span>
-                                                </div>
-                                                <div className="mt-3 text-xs text-muted-foreground">
-                                                    Categories: <span className="text-primary">{post.categories?.join(', ') || 'None'}</span>
-                                                </div>
-                                            </div>
-                                        </CommandItem>
-                                    ))}
-                                </CommandGroup>
-                            )}
-                        </>
+                        data?.map((post) => (
+                            <button
+                                key={post._id}
+                                className="flex gap-3 items-center border-b border-muted p-1 cursor-pointer hover:bg-slate-50 w-full"
+                                onClick={() => handleSelectPost(post.slug.current, post._id)}
+                            >
+                                <div className="w-24 h-24 flex-shrink-0 overflow-hidden rounded-lg shadow-md relative">
+                                    <img
+                                        src={post.mainImage}
+                                        alt={post.alt || 'Post Image'}
+                                        className="w-full h-full object-cover rounded-lg"
+                                    />
+                                </div>
+                                <div className="flex flex-col items-start w-full">
+                                    <div className="text-sm overflow-hidden">{post.title}</div> {/* Añadí overflow-hidden */}
+                                    <div className="flex items-center gap-3 mt-2 text-sm text-muted-foreground">
+                                        <img
+                                            src={post.avatar}
+                                            alt={`${post.Author}'s Avatar`}
+                                            width={32}
+                                            height={32}
+                                            className="rounded-full"
+                                        />
+                                        <span className="font-medium">{post.Author}</span>
+                                        <span className="text-xs">{dateUtils(post.publishedAt)}</span>
+                                    </div>
+                                    <div className="mt-3 text-xs">
+                                        <span className="font-semibold">Categories:</span>{' '}
+                                        <span className="text-primary">{post.Categories?.join(', ') || 'None'}</span>
+                                    </div>
+                                </div>
+                            </button>
+                        ))
                     )}
                 </CommandList>
             </CommandDialog>
